@@ -1,0 +1,38 @@
+<h1 class="text-center mb-5">Update Job Details</h1>
+<form action="/jobs" class="register-form m-auto shadow-lg rounded-5 p-5 w-50" method="post">
+    <div class="mb-3">
+        <label for="jobCatagory" class="form-label" required>Catagory</label>
+        <input type="text" class="form-control" id="location" name="jobCatagory" value="<%= job.jobCatagory %>">
+    </div>
+    <div class="mb-3">
+        <input type="hidden" class="form-control" id="id" name="id" value="<%= job.id %>">
+        <label for="jobDesignation" class="form-label" required>Title</label>
+        <input type="text" class="form-control" id="jobDesignation" name="jobDesignation" value="<%= job.jobDesignation %>">
+    </div>
+    <div class="mb-3">
+        <label for="companyName" class="form-label" required>Company</label>
+        <input type="text" class="form-control" id="companyName" name="companyName" value="<%= job.companyName %>">
+        </div>
+        <div class="mb-3">
+            <label for="jobLocation" class="form-label" required>Location</label>
+            <input type="text" class="form-control" id="location" name="jobLocation" value="<%= job.jobLocation %>">
+    </div>
+    <div class="mb-3">
+        <label for="salary" class="form-label" required>Salary</label>
+        <input type="text" class="form-control" id="salary" name="salary" value="<%= job.salary %>">
+    </div>
+    <div class="mb-3">
+        <label for="skillSet" class="form-label" required>Required Skills</label>
+        <input type="text" class="form-control" id="skillSet" name="skillSet" value="<%= job.skillSet %>">
+    </div>
+    <div class="mb-3">
+        <label for="numberOfOpenings" class="form-label" required>Number Of Openings</label>
+        <input type="text" class="form-control" id="numberOfOpenings" name="numberOfOpenings"
+            value="<%= job.numberOfOpenings %>">
+    </div>
+    <div class="mb-3">
+        <label for="jobOverView" class="form-label" required>Job Overview</label>
+        <textarea class="form-control" rows="5" id="jobOverView" name="jobOverView"><%= job.jobOverView %></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary mt-3 px-5"><b>Update</b></button>
+</form>
