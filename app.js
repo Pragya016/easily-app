@@ -7,7 +7,6 @@ import path from 'path';
 import session from 'express-session';
 import expressEjsLayouts from 'express-ejs-layouts';
 import cookieParser from 'cookie-parser';
-
 import { LandingPageController } from './src/controllers/landingPageController.js';
 import { validateFormData } from './src/middlewares/formValidationMiddleware.js';
 import { AuthController } from './src/controllers/authViewController.js';
@@ -16,23 +15,14 @@ import { registerUser } from './src/middlewares/registerUserMiddleware.js';
 import { Auth } from './src/middlewares/authMiddleware.js';
 import { JobsController } from './src/controllers/jobController.js';
 import { ApplicantsController } from './src/controllers/applicantsController.js';
-<<<<<<< HEAD
 import { sendMail } from './src/middlewares/mailMiddleware.js';
 import {connectToMongoDB} from './config/mongodbConfig.js';
-import dotenv from 'dotenv';
 
 const app = express();
 
 // config env file
 dotenv.config();
 
-=======
-import { connectToMongoDB } from './config/mongodbConfig.js';
-import { sendEmailToUser } from './src/middlewares/mailMiddleware.js'
-
-const app = express();
-
->>>>>>> af0fa2b72e37a6ed24da6e2d1227b4e65e102b9f
 // setup session
 app.use(session({
     secret: 'secret-key',
@@ -84,11 +74,7 @@ const applicantsController = new ApplicantsController();
 // auth routes
 app.get('/register', authController.displayRegisterView)
 app.get('/login', authController.displayLoginView)
-<<<<<<< HEAD
 app.post('/register', validateFormData, registerUser, sendMail, authController.registerUser);
-=======
-app.post('/register', validateFormData, registerUser, sendEmailToUser, authController.registerUser);
->>>>>>> af0fa2b72e37a6ed24da6e2d1227b4e65e102b9f
 app.post('/login', authController.varifyUser)
 app.get('/logout', authController.logout); //this is supposed to be post method
 
@@ -111,6 +97,7 @@ app.post('/job-details/:id', applicantsController.addApplicant)
 app.get('/404', displayError);
 
 // create a server
-app.listen(process.env.PORT);
- connectToMongoDB()
-console.log('server is listening at 5500.');
+app.listen(process.env.PORT, () => {
+    connectToMongoDB()
+    console.log('server is listening at 5500.');
+});
