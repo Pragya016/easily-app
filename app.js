@@ -7,16 +7,12 @@ import path from 'path';
 import session from 'express-session';
 import expressEjsLayouts from 'express-ejs-layouts';
 import cookieParser from 'cookie-parser';
-import { LandingPageController } from './src/controllers/landingPageController.js';
-import { validateFormData } from './src/middlewares/formValidationMiddleware.js';
-import { AuthController } from './src/controllers/authViewController.js';
 import { displayError } from './src/controllers/errorController.js';
-import { registerUser } from './src/middlewares/registerUserMiddleware.js';
+import userRoutes from './src/routes/user.routes.js';
 import { Auth } from './src/middlewares/authMiddleware.js';
-import { JobsController } from './src/controllers/jobController.js';
-import { ApplicantsController } from './src/controllers/applicantsController.js';
-import { sendMail } from './src/middlewares/mailMiddleware.js';
 import {connectToMongoDB} from './config/mongodbConfig.js';
+import jobRoutes from './src/routes/job.routes.js';
+import {LandingPageController} from './src/controllers/landingPageController.js'
 
 const app = express();
 
@@ -66,35 +62,16 @@ app.use((req, res, next) => {
     }
     next();
 });
-// create instance of controllers
-const authController = new AuthController();
+
 const landingPageController = new LandingPageController();
-const applicantsController = new ApplicantsController();
 
-// auth routes
-app.get('/register', authController.displayRegisterView)
-app.get('/login', authController.displayLoginView)
-app.post('/register', validateFormData, registerUser, sendMail, authController.registerUser);
-app.post('/login', authController.varifyUser)
-app.get('/logout', authController.logout); //this is supposed to be post method
-
-
-// job routes
+// Application Routes
 app.get('/', landingPageController.displayLandingPage);
-app.get('/jobs', JobsController.displayJobView);
-app.get('/job-details/:id', JobsController.displayJobDetails);
-// rooutes for recruiter actions
-app.get('/postjob', auth.checkCookie, JobsController.postNewJob)
-app.post('/postjob', JobsController.postJob)
-app.get('/update-job/:id', JobsController.displayUpdateJobForm);
-app.post('/jobs', JobsController.updateJobDetails)
-app.delete('/job-details/:id', JobsController.deleteJob)
-
-// job seeker's routes
-app.post('/job-details/:id', applicantsController.addApplicant)
+app.use('/', userRoutes);
+app.use('/jobs', jobRoutes);
 
 // render error page
-app.get('/404', displayError);
+app.get('*', displayError);
 
 // create a server
 app.listen(process.env.PORT, () => {

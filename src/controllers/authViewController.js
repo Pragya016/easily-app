@@ -64,7 +64,7 @@ export class AuthController {
                 return res.redirect('/404');
             } else {
                 res.locals.isLoggedIn = false;
-                return res.redirect('/');
+                return res.redirect('/login');
             }
         });
 

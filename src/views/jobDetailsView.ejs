@@ -9,7 +9,7 @@
                     <%= job.jobDesignation %>
                 </b>
                 <% if(isLoggedIn){ %>
-                    <a href="/update-job/<%= job.id %>"><i class="fa-solid fa-pen-to-square"
+                    <a href="/jobs/update-job/<%= job.id %>"><i class="fa-solid fa-pen-to-square"
                             style="font-size: 0.9rem; color: grey;"></i></a>
                     <button type="button" class="p-0 btn" onclick="deleteJob(<%= job.id %>)"><i class="fa-solid fa-trash"
                             style="font-size: 0.9rem; color: rgb(226, 0, 0);"></i></button>
@@ -61,6 +61,7 @@
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
+                                        <!-- to apply for a job -->
                                         <form action="/job-details/<%= job.id %>" class="register-form" method="post">
                                             <div class="mb-3">
                                                 <label for="name" class="form-label">Full Name</label>
