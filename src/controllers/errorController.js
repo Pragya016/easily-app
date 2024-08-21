@@ -1,3 +1,3 @@
 export function displayError(req, res) {
-    res.render('errorPage');
+    return res.render('errorPage');
 }

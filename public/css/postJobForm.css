@@ -1,0 +1,19 @@
+#post_job_heading{
+    margin: auto;
+    color: grey;
+    margin-top: 30px;
+}
+
+#post_job_form {
+    box-shadow: 0 3px 15px lightgrey;
+}
+
+#post_job_btn {
+    width: 100%;
+}
+
+@media screen and (max-width : 621px) {
+    #post_job_form {
+        width: 90% !important;
+    }
+}

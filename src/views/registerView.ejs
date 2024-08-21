@@ -1,6 +1,6 @@
-<h1 class="text-center mt-5">Welcome to Easily!</h1>
-<p class="text-center mb-5">We'll help you to land your dream job.</p>
-<form action="/register" class="register-form shadow-lg rounded-4 px-5 py-5" method="post">
+<h1 class="text-center" id="register_heading">Welcome to Easily!</h1>
+<p id="register_text" class="text-center mb-4">We'll help you to land your dream job.</p>
+<form id="register_form" action="/register" class="rounded-4 px-5 py-5" method="post">
     <% if(errorMessage.length> 0){ %>
         <div class="alert alert-danger" role="alert">
             <%= errorMessage[0].msg %>
@@ -19,5 +19,6 @@
                 <label for="password" class="form-label">Password</label>
                 <input type="password" class="form-control" id="password" name="password">
             </div>
-            <button type="submit" class="btn btn-primary">Sign in</button>
+            <button id="register_btn" type="submit" class="btn btn-primary">Register</button>
+            <p id="register_bottom_text">Already have an account? <a href="/login">login</a></p>
 </form>

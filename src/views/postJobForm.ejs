@@ -1,37 +1,37 @@
-<h1 class="text-center">Post A New Job</h1>
-<form action="/jobs/new" class="register-form mt-5 shadow-lg rounded-5 p-5 w-50" method="post">
+<h1 class="text-center" id="post_job_heading">Post A New Job</h1>
+<form action="/jobs/new" id="post_job_form" class="mt-3 mx-auto rounded-4 p-5 w-75" method="post">
     <div class="mb-3">
         <label for="jobCatagory" class="form-label" required>Catagory</label>
-        <input type="text" class="form-control" id="jobCatagory" name="jobCatagory">
+        <input type="text" class="form-control" id="jobCatagory" name="jobCatagory" required>
     </div>
     <div class="mb-3">
         <label for="jobDesignation" class="form-label" required>Title</label>
-        <input type="text" class="form-control" id="jobDesignation" name="jobDesignation">
+        <input type="text" class="form-control" id="jobDesignation" name="jobDesignation" required>
         <input type="hidden" class="form-control" id="id" name="id">
     </div>
     <div class="mb-3">
         <label for="companyName" class="form-label" required>Company</label>
-        <input type="text" class="form-control" id="companyName" name="companyName">
+        <input type="text" class="form-control" id="companyName" name="companyName" required>
     </div>
     <div class="mb-3">
         <label for="jobLocation" class="form-label" required>Location</label>
-        <input type="text" class="form-control" id="jobLocation" name="jobLocation">
+        <input type="text" class="form-control" id="jobLocation" name="jobLocation" required>
     </div>
     <div class="mb-3">
-        <label for="salary" class="form-label" required>Salary</label>
-        <input type="text" class="form-control" id="salary" name="salary">
+        <label for="salary" class="form-label" required>Salary (e.g. 5,00,000)</label>
+        <input type="number" class="form-control" id="salary" name="salary" required>
     </div>
     <div class="mb-3">
-        <label for="skillSet" class="form-label" required>Required Skills</label>
-        <input type="text" class="form-control" id="skillSet" name="skillSet">
+        <label for="skillSet" class="form-label" required>Required Skills (Seperated by comma. e.g. html, css, javascript)</label>
+        <input type="text" class="form-control" id="skillSet" name="skillSet" required>
     </div>
     <div class="mb-3">
         <label for="numberOfOpenings" class="form-label" required>Number Of Openings</label>
-        <input type="number" class="form-control" id="numberOfOpenings" name="numberOfOpenings">
+        <input type="number" class="form-control" id="numberOfOpenings" name="numberOfOpenings" required>
     </div>
     <div class="mb-3">
         <label for="jobOverView" class="form-label" required>Job Overview</label>
-        <textarea class="form-control" rows="5" id="jobOverView" name="jobOverView"></textarea>
+        <textarea class="form-control" rows="5" id="jobOverView" name="jobOverView" required></textarea>
     </div>
-    <button type="submit" class="btn btn-primary mt-3 px-5"><b>Upload</b></button>
+    <button type="submit" class="btn btn-primary w-100 mt-3 px-5"><b>Upload</b></button>
 </form>

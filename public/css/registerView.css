@@ -1,0 +1,35 @@
+#register_heading{
+    margin-top: 2rem;
+    color: grey;
+}
+
+#register_text {
+    margin-top: 10px;
+    color: #afadad;
+}
+
+#register_form {
+    width: 60%;
+    margin: auto;
+    box-shadow: 0 3px 15px lightgrey;
+}
+
+#register_btn {
+    width: 100%;
+}
+
+#register_bottom_text {
+    color: grey;
+    text-align: center;
+    margin-top: 15px;
+}
+
+@media screen and (max-width : 698px) {
+    #register_form {
+        width: 90%;
+    }
+
+    #register_bottom_text {
+        font-size: 0.9rem;
+    }
+}

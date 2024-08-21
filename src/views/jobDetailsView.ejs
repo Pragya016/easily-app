@@ -1,10 +1,10 @@
-<div class="mx-auto mt-5 shadow-lg job-container rounded-4 w-50">
+<div class="mx-auto mt-3" id="job_details_container">
     <div class="card job-card">
-        <div class="card-header">
+        <div class="card-header" style="color: grey;">
             Actively Hiring
         </div>
         <div class="card-body">
-            <h5 class="card-title">
+            <h5 class="card-title" id="job_details_designation">
                 <b>
                     <%= job.jobDesignation %>
                 </b>
@@ -15,39 +15,51 @@
                             style="font-size: 0.9rem; color: rgb(226, 0, 0);"></i></button>
                     <% } %>
             </h5>
-            <p class="card-text">
-                <i class="fa-solid fa-building" style="font-size: 0.9rem; margin-right: 5px; color: grey;"></i> <strong>
-                    <%= job.companyName %>
-                </strong> <br>
-                <i class="fa-solid fa-location-dot" style="font-size: 0.9rem; margin-right: 5px; color: grey;"></i>
-                <%= job.jobLocation %> <br>
-                    <i class="fa-solid fa-indian-rupee-sign" style="font-size: 0.9rem; margin-right: 5px; color: grey;"></i>
-                    <%= job.salary %> <br>
-                        <i class="fa-solid fa-users" style="font-size: 0.9rem; margin-right: 5px; color: grey;"></i>
-                        <%= job.numberOfOpenings %> <br>
-                            <i class="fa-regular fa-calendar" style="font-size: 0.9rem; margin-right: 5px; color: grey;"></i> Posted on
-                            <%= job.jobPosted %>
-                                <br>
-                                Number Of Applicants : <%= job.numberOfOpenings %>
-            </p>
-            <p class="class-text">
-            <h6>Job Overview-</h6>
-            <%= job.jobOverView %>
+            <div id="job_details_details_container">
+                <p class="job_details_text">
+                    <i class="fa-solid fa-building" style="font-size: 0.9rem; margin-right: 5px; color: grey;"></i>
+                    <strong><%= job.companyName %></strong>
                 </p>
+                <p class="job_details_text">
+                    <i class="fa-solid fa-location-dot" style="font-size: 0.9rem; margin-right: 5px; color: grey;"></i>
+                    <%= job.jobLocation %>
+                </p>
+                <p class="job_details_text">
+                    <i class="fa-solid fa-indian-rupee-sign" style="font-size: 0.9rem; margin-right: 5px; color: grey;"></i>
+                    <%= job.salary %>
+                </p>
+                <p class="job_details_text">
+                    <i class="fa-solid fa-users" style="font-size: 0.9rem; margin-right: 5px; color: grey;"></i>
+                    <%= job.numberOfOpenings %>
+                </p>
+                <p class="job_details_text">
+                    <i class="fa-regular fa-calendar" style="font-size: 0.9rem; margin-right: 5px; color: grey;"></i> Posted on
+                    <%= job.jobPosted %>
+                </p>
+                <p class="job_details_text">
+                    Number Of Applicants : <%= job.numberOfOpenings %>
+                </p>
+            </div>
+            <div id="job_details_desc_container">
+            <h5 id="job_details_overview_heading">Job Overview-</h5>
+            <p id="job_details_desc">
+                <%= job.jobOverView %>
+            </p>
+            </div>
 
-                <div class="p-0 card-body d-flex flex-column">
-                    <h6>Required Skills-</h6>
+                <div class="p-0 card-body d-flex flex-column" id="job_details_skills_container">
+                    <h5 id="job_details_skills_heading">Required Skills-</h5>
                     <div class="flex-wrap d-flex">
                         <% const skills=job.skillSet.split(','); %>
                             <% skills.forEach(skill=> { %>
-                                <span><a class="px-2 py-0 mt-2 btn btn-outline-primary me-1" href="#">
+                                <span><a class="px-2 py-0 mt-2 btn btn-outline-primary me-1 job_details_skills" href="#">
                                         <%= skill %>
                                     </a></span>
                                 <% }) %>
                     </div>
                 </div>
                 <% if (isLoggedIn) { %>
-                    <button type="button" class="mt-3 btn btn-primary w-25" data-bs-toggle="modal" data-bs-target="#jobApplication">
+                    <button type="button" class="mt-5 btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#jobApplication">
                         Apply
                     </button>
 

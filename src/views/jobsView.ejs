@@ -1,20 +1,20 @@
-<div class="job-container">
+<div class="job-container" id="jobs_job_container">
     <% jobs.forEach(job=> { %>
-        <div class="card shadow-lg rounded-3 job-card m-2">
-            <div class="card-header">
+        <div class="card job-card jobs-job-card" onclick="openJobDetails('<%= job.id %>')">
+            <div class="card-header jobs-card-header">
                 Actively Hiring
             </div>
             <div class="card-body">
                 <h5 class="card-title">
                     <%= job.jobCatagory %>
                 </h5>
-                <p class="card-text">
-                    <b>
+                <div class="card-text jobs-card-text">
+                    <p class="jobs-designation">
                         <%= job.jobDesignation %>
-                    </b><br>
-                    <%= job.jobLocation %> <br>
-                        <%= job.salary %>
-                </p>
+                    </p>
+                    <p class='jobs-location'><%= job.jobLocation %></p>
+                    <p class="jobs-salary"><%= job.salary %></p>
+                </div>
                 <div class="card-body p-0 d-flex flex-column">
                     <!-- <h6>Required Skills-</h6> -->
                     <div class="d-flex flex-wrap">
@@ -27,7 +27,7 @@
                                     <% })}%>
                     </div>
                 </div>
-                <a href="/jobs/job-details/<%= job.id %>" class="btn btn-primary mt-3">See Details</a>
+                <!-- <button onclick="openJobDetails('<%= job.id %>')" class="btn details-btn btn-primary mt-3">See Details</button> -->
             </div>
         </div>
         <% }) %>

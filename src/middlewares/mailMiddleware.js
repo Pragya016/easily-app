@@ -13,7 +13,7 @@ const transporter = nodemailer.createTransport({
 });
 
 export function sendMail(req, res, next) {
-    const userMailId = req.body.email;
+    const userMailId = req.body.email.trim();
 
     const mailOptions = {
         from: process.env.SENDER_EMAIL,

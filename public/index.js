@@ -10,3 +10,9 @@ function deleteJob(id) {
 
     }
 }
+
+function openJobDetails(jobId) {
+    const currentUrl = window.location.href;
+    const newUrl = `${currentUrl}/job-details/${jobId}`;
+    window.open(newUrl, '_blank');
+}

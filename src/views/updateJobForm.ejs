@@ -1,5 +1,5 @@
-<h1 class="text-center mb-5">Update Job Details</h1>
-<form action="/jobs/update-job" class="register-form m-auto shadow-lg rounded-5 p-5 w-50" method="post">
+<h1 class="text-center mt-4 mb-4" id="update_job_form_heading">Update Job Details</h1>
+<form action="/jobs/update-job" class="register-form m-auto rounded-4 p-5 w-75" id="update_job_form" method="post">
     <div class="mb-3">
         <label for="jobCatagory" class="form-label" required>Catagory</label>
         <input type="text" class="form-control" id="location" name="jobCatagory" value="<%= job.jobCatagory %>">
@@ -34,5 +34,5 @@
         <label for="jobOverView" class="form-label" required>Job Overview</label>
         <textarea class="form-control" rows="5" id="jobOverView" name="jobOverView"><%= job.jobOverView %></textarea>
     </div>
-    <button type="submit" class="btn btn-primary mt-3 px-5"><b>Update</b></button>
+    <button type="submit" class="btn btn-primary mt-3 px-5 w-100"><b>Update</b></button>
 </form>

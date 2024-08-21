@@ -1,0 +1,53 @@
+#job_details_container {
+    width: 75%;
+    cursor: default ;
+}
+
+#job_details_details_container {
+    margin: 25px 0 50px 0;
+}
+
+.job_details_text {
+    margin: 8px 0;
+}
+
+#job_details_desc_container{
+    margin-top: 50px;
+}
+
+#job_details_skills_container {
+    margin-top: 40px;
+}
+
+#job_details_desc {
+    color: grey;
+    line-height: 2;
+    text-align: justify;
+}
+
+@media screen and (max-width : 621px) {
+    #job_details_container {
+        width: 100%;
+        margin: 0 !important;
+    }
+
+    #job_details_details_container, #job_details_desc {
+        font-size: 0.8rem;
+    }
+
+    #job_details_designation{
+        font-size: 1.1rem;
+    }
+
+    #job_details_overview_heading {
+        font-size: 1rem;
+    }
+
+    #job_details_skills_heading {
+
+    }
+
+    .job_details_skills {
+        font-size: 0.8rem;
+    }
+}

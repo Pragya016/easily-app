@@ -14,7 +14,7 @@ export default function jwtAuth(req, res, next) {
         // req.userEmail = payload.email;
 
     } catch (error) {
-        res.send('Unauthorized.');
+        res.render('errorPage');
     }
 
     next();

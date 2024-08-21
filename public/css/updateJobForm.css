@@ -1,0 +1,13 @@
+#update_job_form {
+    box-shadow: 0 3px 15px lightgrey;
+}
+
+#update_job_form_heading {
+    color: grey;
+}
+
+@media screen and (max-width : 621px) {
+    #update_job_form {
+        width: 90% !important;
+    }
+}

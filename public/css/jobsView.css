@@ -1,0 +1,74 @@
+.icon-grey {
+    color: grey;
+}
+
+#jobs_job_container {
+    width: 100vw;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    overflow: scroll;
+}
+
+.color-blue {
+    color: rgb(0, 67, 126);
+}
+
+.jobs-job-card {
+    width: 45%;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.details-btn {
+    width: 30%;
+}
+
+.jobs-job-card:hover {
+    box-shadow: 0px 5px 10px lightgrey;
+    transition: all 0.3s;
+}
+
+.jobs-card-text {
+    margin: 20px 0;
+    color: grey;
+}
+
+.jobs-designation {
+    margin: 0;
+}
+
+.jobs-location {
+    margin: 5px 0;
+}
+
+.jobs-salary {
+    margin: 0;
+}
+
+.jobs-card-header {
+    color: grey !important;
+}
+
+@media screen and (max-width : 998px) {
+    .job-card {
+
+    }
+}
+
+@media screen and (max-width : 621px) {
+    .job-container {
+        height: 90svh;
+        width: 100svw;
+        overflow: scroll;
+    }
+
+    .job-card {
+        width: 100%;
+        margin: 0 !important;
+        margin-bottom: 20px !important ;
+    }
+}
