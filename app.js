@@ -42,12 +42,6 @@ app.use(express.json());
 app.set('view engine', 'ejs');
 app.set('views', path.join(path.resolve() + '/src' + '/views'));
 
-
-// using ejs layout
-app.use(expressEjsLayouts);
-app.use(express.static('src/views'));
-app.use(express.static('public'));
-
 // set isLoggedIn conditionally so that it may update navbar links conditionally
 app.use((req, res, next) => {
     // if (req.session && req.session.email) {
@@ -55,13 +49,19 @@ app.use((req, res, next) => {
         if (req.cookies.username) {
             res.locals.username = req.cookies.username;
         }
-        console.log(res.locals.username);
+
         res.locals.isLoggedIn = true;
     } else {
         res.locals.isLoggedIn = false;
     }
     next();
 });
+
+// using ejs layout
+app.use(expressEjsLayouts);
+app.use(express.static('src/views'));
+app.use(express.static('public'));
+
 
 const landingPageController = new LandingPageController();
 
