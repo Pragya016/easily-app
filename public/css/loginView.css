@@ -20,13 +20,22 @@
     margin-bottom: 0;
 }
 
+#demo_credentials {
+    color: grey;
+    margin-top: 1.5rem;
+}
+
+#login_note {
+    color: grey;
+}
+
 @media screen and (max-width:698px) {
     #login_form {
         width: 90%;
         padding: 25px !important;
     }
 
-    #login_text {
+    #login_text, #demo_credentials {
         font-size: 0.9rem;
     }
 }

@@ -32,22 +32,18 @@
     }
 
     #job_details_details_container, #job_details_desc {
-        font-size: 0.8rem;
-    }
-
-    #job_details_designation{
-        font-size: 1.1rem;
-    }
-
-    #job_details_overview_heading {
         font-size: 1rem;
     }
 
-    #job_details_skills_heading {
+    #job_details_designation{
+        font-size: 1.3rem;
+    }
 
+    #job_details_overview_heading, #job_details_skills_heading {
+        font-size: 1.2rem;
     }
 
     .job_details_skills {
-        font-size: 0.8rem;
+        font-size: 1rem;
     }
 }
